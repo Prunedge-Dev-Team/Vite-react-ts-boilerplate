@@ -5,8 +5,7 @@ import type { UserConfig } from "@commitlint/types";
 const Configuration: UserConfig = {
   extends: ["@commitlint/config-conventional"],
   defaultIgnores: true,
-  helpUrl:
-    "https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
+  helpUrl: "https://github.com/conventional-changelog/commitlint/#what-is-commitlint",
   rules: {
     "body-leading-blank": [1, "always"],
     "body-max-line-length": [2, "always", 100],
@@ -14,11 +13,7 @@ const Configuration: UserConfig = {
     "footer-max-line-length": [2, "always", 100],
     "header-max-length": [2, "always", 100],
     "scope-case": [2, "always", "lower-case"],
-    "subject-case": [
-      2,
-      "never",
-      ["sentence-case", "start-case", "pascal-case", "upper-case"],
-    ],
+    "subject-case": [2, "never", ["sentence-case", "start-case", "pascal-case", "upper-case"]],
     "subject-empty": [2, "never"],
     "subject-full-stop": [2, "never", "."],
     "type-case": [2, "always", "lower-case"],
@@ -47,7 +42,7 @@ const Configuration: UserConfig = {
   },
 };
 
-module.exports = Configuration;
+export default Configuration;
 
 // build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 // ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
