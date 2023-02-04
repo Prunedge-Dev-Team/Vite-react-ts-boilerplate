@@ -2,18 +2,33 @@
   "name": "vite-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pretty-quick": "pretty-quick",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "./src/**/*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
     "@types/axios": "^0.14.0",
     "@types/react-helmet": "^6.1.6",
     "@types/validator": "^13.7.10",
-    "husky": "8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -30,11 +45,26 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/types": "^17.4.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "8.0.1",
+    "lint-staged": "^13.1.0",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.3",
     "vite": "^4.0.0"
+  },
+  "engines": {
+    "npm": "please-use-yarn"
   }
 }
